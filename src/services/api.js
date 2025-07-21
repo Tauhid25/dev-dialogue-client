@@ -1,12 +1,14 @@
 import axios from "axios";
 
 export const getSearchResults = async (query) => {
-  const res = await axios.get(`/posts/search?tag=${query}`);
+  const res = await axios.get(
+    `http://localhost:3000/posts/search?tag=${query}`
+  );
   return res.data;
 };
 
 export const getPopularTags = async () => {
-  const res = await axios.get("/tags/popular");
+  const res = await axios.get("http://localhost:3000/tags/popular");
   return res.data;
 };
 
@@ -22,7 +24,7 @@ export const getAllPosts = async ({ sortByPopularity, tag, page, limit }) => {
 };
 
 export const getAllTags = async () => {
-  const res = await axios.get("/tags");
+  const res = await axios.get("http://localhost:3000/tags");
   return res.data;
 };
 
@@ -33,12 +35,11 @@ export const getAnnouncements = async () => {
 
 // Get post details with comments
 export const getPostDetails = async (id) => {
-  const res = await axios.get(`/posts/${id}`);
+  const res = await axios.get(`http://localhost:3000/posts/${id}`);
   return res.data;
 };
 
 // Submit comment
-
 export const submitComment = async (commentData) => {
   try {
     const res = await axios.post("http://localhost:3000/comments", commentData);
@@ -49,61 +50,69 @@ export const submitComment = async (commentData) => {
   }
 };
 
-
 // Handle vote (upvote/downvote)
 export const handleVote = async (postId, type, userEmail) => {
-  const res = await axios.patch(`/posts/${postId}/vote`, { type, userEmail });
+  const res = await axios.patch(`http://localhost:3000/posts/${postId}/vote`, {
+    type,
+    userEmail,
+  });
   return res.data;
 };
 
-// Get all posts by user //****/
-export const getMyPosts = async (email) => {
-   const res = await axios.get(
-    `http://localhost:3000/posts/my-posts?email=${email}`
+// Get all posts by user
+export const getMyPosts = async (email, page = 1, limit = 5) => {
+  const res = await fetch(
+    `http://localhost:3000/posts/my-posts?email=${email}&page=${page}&limit=${limit}`
   );
-  return res.data;
+  if (!res.ok) throw new Error("Failed to fetch posts");
+  return res.json();
 };
 
-// Delete post
+// // Delete post
 export const deletePostById = async (postId) => {
-  const res = await axios.delete(`http://localhost:3000/posts/${postId}`);
-  return res.data;
+  const res = await fetch(`http://localhost:3000/posts/${postId}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) throw new Error("Failed to delete post");
+  return res.json();
 };
 
 // Membership upgrade
 export const becomeMember = async (email) => {
-  console.log("Upgrading membership for user:", email);
-  const res = await axios.patch(`http://localhost:3000/users/membership`, { email });
+  const res = await axios.patch(`http://localhost:3000/users/membership`, {
+    email,
+  });
   return res.data;
 };
 
-// Get all users, with optional search
-export const getAllUsers = async (search = "") => {
-  const res = await axios.get(
-    `http://localhost:3000/admin/users?search=${search}`
-  );
+// // Get all users, with optional search
+export const getAllUsers = async ({ search = "", page = 1, limit = 5 }) => {
+  const res = await axios.get(`http://localhost:3000/admin/users`, {
+    params: { search, page, limit },
+  });
   return res.data;
 };
 
 // Make a user an admin
 export const makeAdmin = async (userId) => {
-  console.log("Making user an admin:", userId);
   const res = await axios.patch(`http://localhost:3000/users/${userId}`);
   return res.data;
 };
 
 export const getReportedComments = async () => {
-  const res = await axios.get('http://localhost:3000/comments/reported')
-  return res.data
-}
+  const res = await axios.get("http://localhost:3000/comments/reported");
+  return res.data;
+};
 
 export const handleReportAction = async (reportId, action) => {
-  const res = await axios.patch(`http://localhost:3000/comments/action/${reportId}`, { action })
-  return res.data
-}
+  const res = await axios.patch(
+    `http://localhost:3000/comments/action/${reportId}`,
+    { action }
+  );
+  return res.data;
+};
 
 export const createAnnouncement = async (announcement) => {
-  console.log("Creating announcement:", announcement);
   const res = await axios.post(
     "http://localhost:3000/announcements",
     announcement
@@ -118,10 +127,8 @@ export const getUserPosts = async (email) => {
   return res.data;
 };
 
-
-
 export const getUserByEmail = async (email) => {
-  const res = await axios.get(`/users/${email}`);
+  const res = await axios.get(`http://localhost:3000/users?email=${email}`);
   return res.data;
 };
 
@@ -133,7 +140,7 @@ export const getAdminStats = async () => {
 
 // Add new tag to the system
 export const addTag = async (tag) => {
-  const res = await axios.post("/admin/tags", { tag });
+  const res = await axios.post("http://localhost:3000/admin/tags", { tag });
   return res.data;
 };
 
@@ -143,7 +150,10 @@ export const getCommentsByPostId = async (postId) => {
 };
 
 export const reportComment = async (commentId, feedback) => {
-  const res = await axios.patch(`/http://localhost:3000/comments/report/${commentId}`, { feedback });
+  const res = await axios.patch(
+    `/http://localhost:3000/comments/report/${commentId}`,
+    { feedback }
+  );
   return res.data;
 };
 
@@ -156,28 +166,24 @@ export const getPostCountByUser = async (email) => {
 };
 
 // src/services/api.js
-
 export const getTags = async () => {
   const res = await axios.get("http://localhost:3000/tags"); // Assumes your backend has this route
   return res.data; // Expected: [ "React", "MongoDB", "Firebase", ... ]
 };
 
 // src/services/api.js
-
 export const submitNewPost = async (postData) => {
   const res = await axios.post("http://localhost:3000/posts", postData);
   return res.data;
 };
 
 // Get a single post by ID
-
 export const getPostById = async (id) => {
   const res = await axios.get(`http://localhost:3000/posts/${id}`);
   return res.data;
 };
 
 // Vote on a post (upvote/downvote)
-
 export const votePost = async (postId, type) => {
   const res = await axios.patch(
     `http://localhost:3000/posts/${postId}/${type}`
@@ -186,7 +192,6 @@ export const votePost = async (postId, type) => {
 };
 
 // Search posts by tag
-
 export const searchPostsByTag = async (tag) => {
   const res = await axios.get(
     `http://localhost:3000/posts/search?tag=${encodeURIComponent(tag)}`
@@ -195,7 +200,6 @@ export const searchPostsByTag = async (tag) => {
 };
 
 // Get popular posts (e.g. for featured discussions)
-
 export const getPopularPosts = async (limit = 3) => {
   const res = await axios.get(
     `http://localhost:3000/posts?sort=popular&limit=${limit}`
@@ -204,14 +208,12 @@ export const getPopularPosts = async (limit = 3) => {
 };
 
 // Get top contributors
-
 export const getTopContributors = async () => {
   const res = await axios.get("http://localhost:3000/users/top-contributors");
   return res.data;
 };
 
 // Get posts by tag
-
 export const getPostsByTag = async (tag) => {
   const res = await axios.get(
     `http://localhost:3000/posts/search?tag=${encodeURIComponent(tag)}`
@@ -226,9 +228,7 @@ export const addNewTag = async (tag) => {
 };
 
 // for save user profile
-
 export const saveUser = async (user) => {
-  console.log("Saving user:", user);
   const res = await axios.post("http://localhost:3000/users", user);
   return res.data;
 };
@@ -238,10 +238,8 @@ export const fetchUserByEmail = async (email) => {
   return res.data;
 };
 
-
 // Get comment count by post ID
 export const getCommentCount = async (postId) => {
-  console.log("Getting comment count for post ID:", postId);
   const res = await axios.get(`http://localhost:3000/comments/count/${postId}`);
   return res.data.count;
 };

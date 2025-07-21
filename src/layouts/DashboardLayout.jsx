@@ -1,27 +1,3 @@
-// import { Outlet, useLocation } from "react-router";
-// import Sidebar from "../components/Sidebar";
-// import DashboardHome from "../pages/Dashboard/DashboardHome";
-
-// const DashboardLayout = () => {
-//   const location = useLocation();
-
-//   const isDashboardRoot = location.pathname === "/dashboard";
-
-//   return (
-//     <div className="min-h-screen flex bg-gray-100">
-//       {/* Sidebar */}
-//       <Sidebar />
-
-//       {/* Main Content */}
-//       <div className="flex-1 p-5 md:p-8">
-//         {isDashboardRoot ? <DashboardHome /> : <Outlet />}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default DashboardLayout;
-
 import { Outlet, useLocation } from "react-router";
 import { useState } from "react";
 import Sidebar from "../components/Sidebar";

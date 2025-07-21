@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
+import Loading from "../Loading/Loading";
 
 const feedbackOptions = [
-  "Thanks a lot!",
   "Much appreciated!",
+  "Irrelevant opinion",
   "Grateful for your opinion!",
 ];
 
@@ -56,7 +57,7 @@ const Comments = () => {
       <h2 className="text-2xl font-bold mb-4">Comments on this Post</h2>
 
       {isLoading ? (
-        <p>Loading comments...</p>
+        <Loading></Loading>
       ) : (
         <div className="overflow-x-auto">
           <table className="min-w-full text-left border">

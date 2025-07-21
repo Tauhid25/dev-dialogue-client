@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -8,10 +8,11 @@ import Lottie from "lottie-react";
 import registerAnimation from "../../assets/lotties/register.json";
 import { useMutation } from "@tanstack/react-query";
 import { saveUser } from "../../services/api";
-import useAuth from "../../hooks/useAuth";
+import { AuthContext } from "../../context/AuthContext";
 
 const Register = () => {
-  const { createUser, setUser, updateUser, loginWithGoogle } = useAuth();
+  const { createUser, setUser, updateUser, loginWithGoogle } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -53,7 +54,7 @@ const Register = () => {
 
       await updateUser({ displayName: name, photoURL });
       setUser({ ...user, displayName: name, photoURL });
-      console.log("User registered:", name, photoURL);
+      
 
       await saveUserToDB({ name, email, photoURL });
 
@@ -198,9 +199,3 @@ const Register = () => {
 
 export default Register;
 
-//  onSuccess: () => {
-//       toast.success("User saved successfully!");
-//     },
-//     onError: () => {
-//       toast.error("Failed to save user data.");
-//     },

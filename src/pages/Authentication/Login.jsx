@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -7,10 +7,10 @@ import Lottie from "lottie-react";
 import loginAnimation from "../../assets/lotties/login.json";
 import { useMutation } from "@tanstack/react-query";
 import { saveUser } from "../../services/api";
-import useAuth from "../../hooks/useAuth";
+import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
-  const { login, loginWithGoogle, setUser } = useAuth();
+  const { login, loginWithGoogle, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -144,9 +144,3 @@ const Login = () => {
 
 export default Login;
 
-//  onSuccess: () => {
-//       toast.success("User saved successfully!");
-//     },
-//     onError: () => {
-//       toast.error("Failed to save user data.");
-//     },

@@ -20,7 +20,7 @@ const AdminProfile = () => {
     queryKey: ["adminStats"],
     queryFn: getAdminStats,
   });
-console.log("Admin stats:", stats);
+  
   // Tags API
   const { data: tags = [] } = useQuery({
     queryKey: ["tags"],

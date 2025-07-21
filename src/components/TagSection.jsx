@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getTags } from "../services/api";
+import Loading from "../pages/Loading/Loading";
 
 const TagSection = ({ onTagClick }) => {
   const { data: tags = [], isLoading } = useQuery({
@@ -7,7 +8,7 @@ const TagSection = ({ onTagClick }) => {
     queryFn: getTags,
   });
 
-  if (isLoading) return <p>Loading tags...</p>;
+  if (isLoading) return <Loading></Loading>
 
   return (
     <div className="py-10">

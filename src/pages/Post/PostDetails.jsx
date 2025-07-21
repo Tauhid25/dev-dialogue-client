@@ -9,6 +9,7 @@ import {
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { FacebookShareButton, FacebookIcon } from "react-share";
+import Loading from "../Loading/Loading";
 
 const PostDetails = () => {
   const { id } = useParams();
@@ -56,10 +57,10 @@ const PostDetails = () => {
     });
   };
 
-  if (loadingPost) return <p>Loading post...</p>;
+  if (loadingPost) return <Loading></Loading>;
 
   return (
-    <div className="max-w-3xl mx-auto p-4 bg-white rounded shadow">
+    <div className="max-w-3xl mx-2 md:mx-4 lg:mx-auto my-4 p-4 bg-white border rounded shadow">
       {/* Post Header */}
       <div className="flex items-center gap-3 mb-4">
         <img
@@ -123,7 +124,7 @@ const PostDetails = () => {
 
         {/* Display Comments */}
         {loadingComments ? (
-          <p>Loading comments...</p>
+         <Loading></Loading>
         ) : comments.length > 0 ? (
           <ul className="space-y-3">
             {comments.map((c, i) => (

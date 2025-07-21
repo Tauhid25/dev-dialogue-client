@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getPostsByTag } from "../services/api";
 import PostCard from "./PostCard";
+import Loading from "../pages/Loading/Loading";
 
 const SearchByTagResult = ({ selectedTag }) => {
   const { data: posts = [], isLoading } = useQuery({
@@ -18,7 +19,7 @@ const SearchByTagResult = ({ selectedTag }) => {
       </h2>
 
       {isLoading ? (
-        <p>Loading posts...</p>
+        <Loading></Loading>
       ) : posts.length === 0 ? (
         <p className="text-gray-500">No posts found for this tag.</p>
       ) : (

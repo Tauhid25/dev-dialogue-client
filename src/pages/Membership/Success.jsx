@@ -23,8 +23,7 @@ const Success = () => {
 
   useEffect(() => {
     if (user?.email && !hasUpgraded) {
-      console.log("Upgrading membership for:", user.email);
-      mutation.mutate();
+            mutation.mutate();
     }
   }, [user?.email, hasUpgraded, mutation]);
 

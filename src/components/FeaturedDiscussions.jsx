@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router"; // You said you're using `react-router`
+import { Link } from "react-router"; 
 import { getPopularPosts } from "../services/api";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import Loading from "../pages/Loading/Loading";
 
 
 const FeaturedDiscussions = () => {
@@ -12,7 +13,7 @@ const FeaturedDiscussions = () => {
   }, []);
   const { data: posts = [], isLoading } = useQuery({
     queryKey: ["featuredPosts"],
-    queryFn: () => getPopularPosts(3), // Return top 3 posts
+    queryFn: () => getPopularPosts(3), 
   });
 
   return (
@@ -23,7 +24,7 @@ const FeaturedDiscussions = () => {
         </h2>
 
         {isLoading ? (
-          <p className="text-gray-600">Loading...</p>
+          <Loading></Loading>
         ) : posts.length === 0 ? (
           <p className="text-gray-500">No featured posts found.</p>
         ) : (
@@ -44,7 +45,7 @@ const FeaturedDiscussions = () => {
                   <span>👍 {post.upVote - post.downVote}</span>
                 </div>
                 <Link
-                  to={`/post/${post._id}`}
+                  to={`/posts/${post._id}`}
                   className="inline-block mt-4 text-blue-600 hover:underline"
                 >
                   Read More →

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getAllPosts } from "../services/api";
 import PostCard from "./PostCard";
+import Loading from "../pages/Loading/Loading";
 
 const PostContainer = () => {
   const [sortByPopularity, setSortByPopularity] = useState(false);
@@ -13,7 +14,7 @@ const PostContainer = () => {
     queryFn: () => getAllPosts({ sortByPopularity, page, limit }),
   });
 
-  if (isLoading) return <p>Loading posts...</p>;
+  if (isLoading) return <Loading></Loading>;
 
   return (
     <div className="space-y-2">

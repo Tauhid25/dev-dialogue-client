@@ -1,16 +1,16 @@
 import { FaRegComments, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link } from "react-router"; 
 import { useQuery } from "@tanstack/react-query";
-import { getCommentCount } from "../services/api"; // adjust path as needed
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { getCommentCount } from "../services/api";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-
 const PostCard = ({ post }) => {
-    useEffect(() => {
+  useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
   const voteCount = post.upVote - post.downVote;
 
   const { data: commentCount = 0 } = useQuery({
@@ -20,7 +20,11 @@ const PostCard = ({ post }) => {
 
   return (
     <Link to={`/posts/${post._id}`}>
-      <div data-aos="fade-right" className="bg-white border p-4 rounded-lg shadow hover:shadow-md transition">
+      <div
+        data-aos="fade-right"
+        className="bg-white border p-4 rounded-lg shadow hover:shadow-md transition"
+      >
+        {/* Author Info */}
         <div className="flex items-center gap-2 mb-2">
           <img
             src={post.authorImage}
@@ -29,12 +33,28 @@ const PostCard = ({ post }) => {
           />
           <span className="font-semibold">{post.authorName}</span>
         </div>
-        <h2 className="text-xl font-bold">{post.title}</h2>
-        <p className="text-sm text-gray-600">{post.tag}</p>
-        <p className="text-xs text-gray-400">
+
+        {/* Title */}
+        <h2 className="text-xl font-bold mb-1">{post.title}</h2>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-2">
+          {post.tags?.map((tag, index) => (
+            <span
+              key={index}
+              className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Date */}
+        <p className="text-xs text-gray-400 mb-2">
           {new Date(post.createdAt).toLocaleString()}
         </p>
 
+        {/* Vote & Comment Stats */}
         <div className="flex items-center gap-4 mt-3 text-sm text-gray-700">
           <span className="flex items-center gap-1">
             <FaThumbsUp /> {post.upVote}
@@ -53,3 +73,4 @@ const PostCard = ({ post }) => {
 };
 
 export default PostCard;
+

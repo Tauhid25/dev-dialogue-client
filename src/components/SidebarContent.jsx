@@ -1,5 +1,6 @@
 import { AlertTriangle, FilePlus, Home, List, Megaphone, UserCircle, Users } from "lucide-react";
 import { Link, NavLink } from "react-router";
+import Loading from "../pages/Loading/Loading";
 
 const SidebarContent = ({ role, isLoading, linkClass }) => {
   return (
@@ -10,7 +11,7 @@ const SidebarContent = ({ role, isLoading, linkClass }) => {
       </Link>
 
       {isLoading ? (
-        <p className="text-gray-500">Loading sidebar...</p>
+        <Loading></Loading>
       ) : (
         <nav className="space-y-2 text-gray-800 text-sm">
           {role === "admin" ? (

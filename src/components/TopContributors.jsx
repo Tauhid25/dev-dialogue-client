@@ -3,6 +3,7 @@ import { getTopContributors } from "../services/api"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import Loading from "../pages/Loading/Loading";
 
 
 const TopContributors = () => {
@@ -20,7 +21,7 @@ const TopContributors = () => {
         🏆 Top Contributors
       </h2>
       {isLoading ? (
-        <p className="text-center text-gray-600">Loading...</p>
+        <Loading></Loading>
       ) : contributors.length === 0 ? (
         <p className="text-center text-gray-500">No top contributors found.</p>
       ) : (

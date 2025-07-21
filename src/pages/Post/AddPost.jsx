@@ -10,6 +10,7 @@ import {
 } from "../../services/api";
 import { useNavigate } from "react-router";
 import Select from "react-select";
+import Loading from "../Loading/Loading";
 
 const AddPost = () => {
   const { user } = useContext(AuthContext);
@@ -45,8 +46,7 @@ const AddPost = () => {
       setLimitReached(true);
     }
   }, [dbUser, postCount]);
-  console.log("User post count:", postCount);
-  // Tags
+   // Tags
   const { data: tags = [] } = useQuery({
     queryKey: ["tags"],
     queryFn: getTags,
@@ -77,7 +77,7 @@ const AddPost = () => {
     mutation.mutate(post);
   };
 
-  if (userLoading || countLoading) return <p>Loading...</p>;
+  if (userLoading || countLoading) return <Loading></Loading>;
 
   if (limitReached) {
     return (

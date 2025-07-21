@@ -20,8 +20,6 @@ import ReportedComments from "../pages/Dashboard/ReportedComments";
 import Comments from "../pages/comments/Comments";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRoute from "../routes/PrivateRoute";
-import AdminRoute from "../routes/AdminRoute";
-import Forbidden from "../pages/Forbidden/Forbidden";
 
 export const router = createBrowserRouter([
   {
@@ -55,10 +53,6 @@ export const router = createBrowserRouter([
       {
         path: "/success",
         Component: Success,
-      },
-      {
-        path: "/forbidden",
-        Component: Forbidden,
       },
     ],
   },
@@ -94,42 +88,26 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/admin-profile",
-        element: (
-          <AdminRoute>
-            <AdminProfile></AdminProfile>
-          </AdminRoute>
-        ),
+        Component: AdminProfile,
       },
       {
         path: "/dashboard/manage-users",
-        element: (
-          <AdminRoute>
-            <ManageUsers></ManageUsers>
-          </AdminRoute>
-        ),
+        Component: ManageUsers,
       },
       {
         path: "/dashboard/reported-comments",
-        element: (
-          <AdminRoute>
-            <ReportedComments></ReportedComments>
-          </AdminRoute>
-        ),
+        Component: ReportedComments,
       },
       {
         path: "/dashboard/make-announcement",
-        element: (
-          <AdminRoute>
-            <MakeAnnouncement></MakeAnnouncement>
-          </AdminRoute>
-        ),
+        Component: MakeAnnouncement,
       },
       {
         path: "/dashboard/comments/:postId",
         element: (
-          <AdminRoute>
+          <PrivateRoute>
             <Comments></Comments>
-          </AdminRoute>
+          </PrivateRoute>
         ),
       },
     ],

@@ -2,11 +2,11 @@ import React from "react";
 import Banner from "../../components/Banner";
 import PostContainer from "../../components/PostContainer";
 import TagSection from "../../components/TagSection";
-import AnnouncementSection from "../../components/AnnouncementSection";
 import SearchResults from "../../components/SearchResults";
 import FeaturedDiscussions from "../../components/FeaturedDiscussions";
 import TopContributors from "../../components/TopContributors";
 import TagExplorer from "../../components/TagExplorer";
+import AnnouncementContainer from "../../components/AnnouncementContainer";
 
 const Home = () => {
   return (
@@ -17,8 +17,8 @@ const Home = () => {
         <div className="w-full md:w-2/3">
           <PostContainer></PostContainer>
         </div>
-        <div className="w-full md:w-1/3 pt-18">
-          <AnnouncementSection></AnnouncementSection>
+        <div className="w-full md:w-1/3 pt-12">
+          <AnnouncementContainer></AnnouncementContainer>
         </div>
       </div>
       <FeaturedDiscussions></FeaturedDiscussions>
