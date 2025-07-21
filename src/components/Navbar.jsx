@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const fetchAnnouncementCount = async () => {
-  const res = await axios.get("http://localhost:3000/announcements/count");
+  const res = await axios.get("https://dev-dialogue-server.vercel.app/announcements/count");
   return res.data.count;
 };
 

@@ -1,12 +1,92 @@
-# React + Vite
+# 🗣️ DevDialogue
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** [https://dev-dialogue.netlify.app/](https://dev-dialogue.netlify.app/)
 
-Currently, two official plugins are available:
+## 📌 Project Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+DevDialogue is a full-stack MERN forum web application where users can engage in meaningful technical discussions. It was built as part of the test project to demonstrate strong proficiency in MERN stack development, secure data handling, real-world UI/UX, and production-ready deployment strategies.
 
-## Expanding the ESLint configuration
+This project focuses on:
+- Scalable user interactions through posts and comments.
+- Real-time engagement via voting and announcements.
+- Role-based access and user/member/admin dashboards.
+- Secure authentication and private routes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Key Features
+
+### 🏠 Home Page
+- Search bar that filters posts by tags (backend search).
+- Tag-based filter system.
+- Sort by Popularity or Newest.
+- Pagination (5 posts per page).
+- Announcement section (conditionally visible).
+- Vote & Comment counts on each post.
+
+### 📝 Posts
+- Add, View, and Delete posts.
+- Limit: 5 posts per regular user.
+- Become a member to post more.
+
+### 🔐 Authentication
+- Firebase Auth with social login (Google).
+- JWT-based authorization.
+
+### 🧑 User Dashboard
+- My Profile (Badges, recent posts).
+- Add Post (with React-Select).
+- My Posts (Manage/Delete/View comments).
+- Comment report system with feedback & modal view.
+
+### 🛡️ Admin Dashboard
+- Admin profile with pie chart (Posts, Comments, Users).
+- Manage users (search + promote to admin).
+- Reported Activities (moderate reports).
+- Make Announcement.
+- Add Tags feature.
+
+### 💳 Membership
+- Pay (dummy UI) to become a Gold member.
+- Gold badge unlocks extended posting rights.
+
+---
+
+## 🧩 Tech Stack
+
+- **Frontend:** React.js, React Router DOM, TailwindCSS, DaisyUI
+- **Backend:** Express.js, MongoDB (MongoDB Atlas)
+- **Authentication:** Firebase, JWT
+- **State/Query:** React Context, React Hook Form, React Query (Tanstack)
+- **Visualization:** Recharts
+- **Forms & UX:** React-Select, React-Toastify, React-Share, React Awesome Button
+- **Deployment:** 
+  - Client: Vercel / Netlify
+  - Server: Render
+
+---
+
+## 📦 NPM Packages Used
+
+### Frontend
+- `react`
+- `react-dom`
+- `react-router-dom`
+- `firebase`
+- `react-hook-form`
+- `@tanstack/react-query`
+- `axios`
+- `react-select`
+- `react-toastify`
+- `react-share`
+- `react-awesome-button`
+- `recharts`
+
+### Backend
+- `express`
+- `cors`
+- `dotenv`
+- `mongodb`
+- `jsonwebtoken`
+
+---

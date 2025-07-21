@@ -28,7 +28,7 @@ const FeaturedDiscussions = () => {
         ) : posts.length === 0 ? (
           <p className="text-gray-500">No featured posts found.</p>
         ) : (
-          <div data-aos="fade-down"   data-aos-easing="linear" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div data-aos="fade-up"  className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
               <div
                 key={post._id}

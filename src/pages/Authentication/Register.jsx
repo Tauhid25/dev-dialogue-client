@@ -84,7 +84,7 @@ const Register = () => {
       if (user.displayName && user.photoURL) {
         saveUserToDB(userData);
         setUser(user);
-        toast.success("You  Logged in with Google!");
+        toast.success("You have  Logged in with Google!");
         navigate("/");
       } else {
         toast.error("Missing profile info from Google.");

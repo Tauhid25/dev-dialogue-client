@@ -21,7 +21,7 @@ const PostCard = ({ post }) => {
   return (
     <Link to={`/posts/${post._id}`}>
       <div
-        data-aos="fade-right"
+        data-aos="fade-up"
         className="bg-white border p-4 rounded-lg shadow hover:shadow-md transition"
       >
         {/* Author Info */}

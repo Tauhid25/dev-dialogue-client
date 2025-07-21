@@ -33,7 +33,7 @@ const Login = () => {
       const result = await login(email, password);
       const user = result.user;
       setUser(user);
-      toast.success("Logged in successfully!");
+      toast.success("You have Logged in successfully!");
       navigate(location.state || "/");
     } catch (err) {
       setError(err.message);
@@ -55,7 +55,7 @@ const Login = () => {
       if (user.displayName && user.photoURL) {
         saveUserToDB(userData);
         setUser(user);
-        toast.success("Logged in with Google!");
+        toast.success("You have Logged in with Google!");
         navigate("/");
       } else {
         toast.error("Missing profile info from Google.");

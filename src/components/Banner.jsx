@@ -17,7 +17,7 @@ const Banner = () => {
 
   return (
     <div className="p-4 bg-white rounded-lg">
-      <div className="bg-[url('banner.jpg')] bg-center bg-cover min-h-100 flex flex-col justify-center items-center  text-center rounded-lg">
+      <div className="bg-[url('https://i.ibb.co/VX2sLwR/banner.jpg')] bg-center bg-cover min-h-100 flex flex-col justify-center items-center  text-center rounded-lg">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-10 px-2">
           <Typewriter
             words={["Welcome to DevDialogue Community", "Discuss. Learn. Grow."]}

@@ -3,6 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createAnnouncement } from "../../services/api";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
+import Swal from "sweetalert2";
 
 const MakeAnnouncement = () => {
   const {
@@ -19,7 +20,11 @@ const MakeAnnouncement = () => {
     mutationFn: createAnnouncement,
     onSuccess: () => {
       queryClient.invalidateQueries(["announcements"]);
-      alert("📣 Announcement created successfully!");
+      Swal.fire({
+        title: "Good job!",
+        text: "You have successfully made an announcement!",
+        icon: "success",
+      });
       reset();
     },
   });
