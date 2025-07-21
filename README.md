@@ -50,7 +50,7 @@ This project focuses on:
 - Pay (dummy UI) to become a Gold member.
 - Gold badge unlocks extended posting rights.
 
----
+----
 
 ## 🧩 Tech Stack
 
