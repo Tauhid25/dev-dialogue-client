@@ -98,7 +98,7 @@ This project focuses on:
  **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/Tauhid25/freelancer-hub-client.git
+   git clone https://github.com/Tauhid25/dev-dialogue-client.git
    ```
  **Run the Command:**
 
