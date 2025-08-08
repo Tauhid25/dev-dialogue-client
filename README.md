@@ -2,6 +2,8 @@
 
 **Live Site:** [https://dev-dialogue.netlify.app/](https://dev-dialogue.netlify.app/)
 
+![Cover](https://i.ibb.co.com/7d8f0XLB/dev-dialogue.png)
+
 ## 📌 Project Purpose
 
 DevDialogue is a full-stack MERN forum web application where users can engage in meaningful technical discussions. It was built as part of the test project to demonstrate strong proficiency in MERN stack development, secure data handling, real-world UI/UX, and production-ready deployment strategies.
@@ -90,3 +92,17 @@ This project focuses on:
 - `jsonwebtoken`
 
 ---
+
+### 📦 **Installation & Setup**
+
+ **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/Tauhid25/freelancer-hub-client.git
+   ```
+ **Run the Command:**
+
+   ```bash
+   npm install
+
+   ```
