@@ -18,7 +18,7 @@ const TopContributors = () => {
   return (
     <section className="pt-8">
       <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-center text-[#007dff] pb-8 dark:text-white">
-        🏆 Top Contributors
+         Top Contributors
       </h2>
       {isLoading ? (
         <Loading></Loading>
