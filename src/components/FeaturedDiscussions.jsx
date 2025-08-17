@@ -20,7 +20,7 @@ const FeaturedDiscussions = () => {
     <section className="py-12  dark:bg-gray-800 dark:text-white">
       <div className="text-center">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-8 dark:text-white">
-          Featured Discussions 🔥
+          Featured Discussions 
         </h2>
 
         {isLoading ? (
