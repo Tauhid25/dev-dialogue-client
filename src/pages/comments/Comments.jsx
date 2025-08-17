@@ -23,7 +23,7 @@ const Comments = () => {
   const { data: comments = [], isLoading } = useQuery({
     queryKey: ["comments", postId],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:3000/comments/${postId}`);
+      const res = await axios.get(`https://dev-dialogue-server.vercel.app/comments/${postId}`);
       return res.data;
     },
   });
@@ -31,7 +31,7 @@ const Comments = () => {
   // Report comment mutation
   const mutation = useMutation({
     mutationFn: ({ commentId, feedback }) =>
-      axios.patch(`http://localhost:3000/comments/report/${commentId}`, {
+      axios.patch(`https://dev-dialogue-server.vercel.app/comments/report/${commentId}`, {
         feedback,
       }),
     onSuccess: (_, { commentId }) => {

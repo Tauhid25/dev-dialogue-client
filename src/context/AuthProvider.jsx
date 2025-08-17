@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
         return;
       }
       const res = await axios.get(
-        `http://localhost:3000/posts/search?tag=${encodeURIComponent(query)}`
+        `https://dev-dialogue-server.vercel.app/posts/search?tag=${encodeURIComponent(query)}`
       );
       setSearchResults(res.data);
     } catch (error) {

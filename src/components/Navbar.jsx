@@ -8,7 +8,7 @@ import axios from "axios";
 import DarkMoodToggler from "./DarkMoodToggler";
 
 const fetchAnnouncementCount = async () => {
-  const res = await axios.get("http://localhost:3000/announcements/count");
+  const res = await axios.get("https://dev-dialogue-server.vercel.app/announcements/count");
   return res.data.count;
 };
 

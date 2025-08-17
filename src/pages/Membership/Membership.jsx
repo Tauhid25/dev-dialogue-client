@@ -13,7 +13,7 @@ const Membership = () => {
       const stripe = await stripePromise;
 
       const res = await axios.post(
-        "http://localhost:3000/create-checkout-session",
+        "https://dev-dialogue-server.vercel.app/create-checkout-session",
         {
           email: user.email,
         }
