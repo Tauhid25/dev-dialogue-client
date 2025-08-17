@@ -5,3 +5,5 @@
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
