@@ -85,7 +85,7 @@ const Membership = () => {
   return (
     <div className="dark:bg-gray-800 w-full min-h-screen flex items-center justify-center">
       <div className="max-w-3xl mx-2 md:mx-auto bg-white dark:bg-gray-900 p-6 rounded shadow mt-10 text-center border border-b-gray-500 dark:border-gray-700">
-        <h2 className="text-3xl font-bold text-[#009fff] dark:text-[#4aaeff] mb-4">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#009fff] dark:text-[#4aaeff] mb-4">
           Upgrade to Gold Membership
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-6">

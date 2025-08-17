@@ -28,11 +28,11 @@ const FeaturedDiscussions = () => {
         ) : posts.length === 0 ? (
           <p className="text-gray-500">No featured posts found.</p>
         ) : (
-          <div data-aos="fade-up"  className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div data-aos="fade-up"  className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {posts.map((post) => (
               <div
                 key={post._id}
-                className="bg-white border p-6 rounded-lg shadow hover:shadow-xl transition duration-300 dark:bg-gray-800 dark:text-white dark:border dark:border-white dark:rounded-lg"
+                className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition duration-300 dark:bg-gray-800 dark:text-white dark:border dark:border-white dark:rounded-lg"
               >
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                   {post.title}

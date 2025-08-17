@@ -100,7 +100,7 @@ const MyPosts = () => {
                     <td className="px-4 py-2 border">
                       <button
                         onClick={() => handleCommentClick(post._id)}
-                        className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
+                        className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm dark:bg-gray-800 dark:text-white dark:border dark:border-white"
                       >
                         Comments
                       </button>

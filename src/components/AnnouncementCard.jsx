@@ -19,7 +19,7 @@ const AnnouncementCard = ({ item }) => {
           <h3 className="font-semibold">{item.authorName}</h3>
         </div>
         <h4 className="text-lg font-bold text-gray-800 dark:text-white">{item.title}</h4>
-        <p className="text-gray-600 md:hidden lg:block dark:text-white">{item.description}</p>
+        <p className="text-gray-600  dark:text-white">{item.description}</p>
       </div>
     </div>
   );

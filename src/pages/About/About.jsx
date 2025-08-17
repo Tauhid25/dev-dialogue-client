@@ -88,10 +88,10 @@ const About = () => {
     <div className="bg-blue-50 dark:bg-gray-900 py-12 px-6 md:px-10 lg:px-24 min-h-screen">
       {/* Header */}
       <div className="max-w-5xl mx-auto text-center mb-12">
-        <h1 className="text-4xl font-bold text-blue-700 dark:text-blue-400 mb-4">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-blue-700 dark:text-blue-400 mb-4">
           About DevDialogue
         </h1>
-        <p className="text-gray-600 dark:text-gray-300 text-lg">
+        <p className="text-gray-600 dark:text-gray-300 text-sm md:text-lg">
           DevDialogue is a collaborative platform where developers share
           knowledge, ask questions, and connect through meaningful technical
           discussions.
@@ -106,7 +106,7 @@ const About = () => {
         >
           <FaUserFriends className="text-4xl text-blue-600 mx-auto mb-4" />
           <h2 className="text-xl font-semibold mb-2">Community Driven</h2>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">
             Built for developers by developers. Share ideas, solve problems, and
             grow together.
           </p>
@@ -117,7 +117,7 @@ const About = () => {
         >
           <FaCode className="text-4xl text-green-600 mx-auto mb-4" />
           <h2 className="text-xl font-semibold mb-2">Focused on Code</h2>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">
             Post code snippets, vote on best practices, and get insightful
             feedback from peers.
           </p>
@@ -128,7 +128,7 @@ const About = () => {
         >
           <FaBullhorn className="text-4xl text-yellow-600 mx-auto mb-4" />
           <h2 className="text-xl font-semibold mb-2">Announcements & Tags</h2>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">
             Stay updated with platform announcements and easily discover content
             using tags.
           </p>
@@ -141,7 +141,7 @@ const About = () => {
         className="mt-16 max-w-4xl mx-auto text-center bg-white dark:bg-gray-800 dark:text-white dark:border dark:border-white p-6 rounded-lg shadow"
       >
         <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-        <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+        <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-sm md:text-base">
           At <strong>DevDialogue</strong>, we aim to empower developers by
           providing a safe, inclusive, and technically rich environment for
           discussions. Whether you're a beginner or a seasoned expert — there's

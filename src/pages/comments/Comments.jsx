@@ -53,7 +53,7 @@ const Comments = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto mt-8 p-6 bg-white shadow rounded">
+    <div className="max-w-5xl mx-auto mt-8 p-6 bg-white shadow rounded dark:bg-gray-800 dark:text-white dark:border dark:border-white">
       <h2 className="text-2xl font-bold mb-4">Comments on this Post</h2>
 
       {isLoading ? (
@@ -62,7 +62,7 @@ const Comments = () => {
         <div className="overflow-x-auto">
           <table className="min-w-full text-left border">
             <thead>
-              <tr className="bg-gray-100 text-gray-700">
+              <tr className="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-white dark:border dark:border-white">
                 <th className="px-4 py-2 border">Commenter Email</th>
                 <th className="px-4 py-2 border">Comment</th>
                 <th className="px-4 py-2 border">Feedback</th>
@@ -94,7 +94,7 @@ const Comments = () => {
                     </td>
                     <td className="px-4 py-2 border">
                       <select
-                        className="border p-1 rounded"
+                        className="border p-1 rounded dark:bg-gray-800 dark:text-white dark:border dark:border-white"
                         onChange={(e) =>
                           setSelectedFeedback((prev) => ({
                             ...prev,
@@ -138,10 +138,10 @@ const Comments = () => {
 
       {/* Modal for full comment text */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded shadow max-w-md w-full">
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 dark:bg-gray-700 dark:text-white dark:border dark:border-white">
+          <div className="bg-white p-6 rounded shadow max-w-md w-full dark:bg-gray-800 dark:text-white dark:border dark:border-white">
             <h3 className="text-xl font-semibold mb-4">Full Comment</h3>
-            <p className="text-gray-700 mb-6">{modalContent}</p>
+            <p className="text-gray-700 mb-6 dark:text-white">{modalContent}</p>
             <button
               onClick={() => setShowModal(false)}
               className="px-4 py-2 bg-blue-600 text-white rounded"
