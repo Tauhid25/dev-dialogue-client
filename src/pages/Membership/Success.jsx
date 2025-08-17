@@ -28,9 +28,9 @@ const Success = () => {
   }, [user?.email, hasUpgraded, mutation]);
 
   return (
-    <div className="text-center mt-20">
-      <h2 className="text-3xl font-bold text-green-600">✅ Payment Successful!</h2>
-      <p className="mt-4 text-gray-600">
+    <div className="text-center mt-20 dark:bg-gray-800 dark:text-white">
+      <h2 className="text-3xl font-bold text-green-600 dark:text-white" >✅ Payment Successful!</h2>
+      <p className="mt-4 text-gray-600 dark:text-white">
         You're now a <strong>Gold Member</strong> of DevDialogue 🎉
       </p>
       <button
