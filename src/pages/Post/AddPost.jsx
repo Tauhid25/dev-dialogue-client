@@ -81,7 +81,7 @@ const AddPost = () => {
 
   if (limitReached) {
     return (
-      <div className="bg-white p-6 rounded shadow max-w-xl mx-auto text-center">
+      <div className="bg-white p-6 rounded shadow max-w-xl mx-auto text-center dark:bg-gray-800 dark:text-white dark:border dark:border-white">
         <h2 className="text-xl font-semibold text-red-600 mb-4">
           Post Limit Reached
         </h2>
@@ -100,7 +100,7 @@ const AddPost = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+    <div className="max-w-2xl mx-auto bg-white p-6 rounded shadow dark:bg-gray-800 dark:text-white dark:border dark:border-white">
       <h2 className="text-2xl font-bold mb-6">Add New Post</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         {/* Title */}
@@ -137,8 +137,9 @@ const AddPost = () => {
 
         {/* Tags */}
         <div>
-          <label className="block text-gray-700 font-medium mb-1">Tags</label>
+          <label className="block text-gray-700 font-medium mb-1 dark:text-white dark:bg-gray-800">Tags</label>
           <Controller
+          className="dark:bg-gray-800 dark:text-white"
             control={control}
             name="tags"
             rules={{ required: true }}
@@ -147,12 +148,13 @@ const AddPost = () => {
                 {...field}
                 options={tags.map((tag) => ({ value: tag, label: `#${tag}` }))}
                 isMulti
+                className="dark:bg-gray-800 dark:text-white"
                 placeholder="Select tags"
               />
             )}
           />
           {errors.tags && (
-            <span className="text-red-500 text-sm">
+            <span className="text-red-500 text-sm dark:text-white">
               At least one tag is required
             </span>
           )}

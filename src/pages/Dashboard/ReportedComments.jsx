@@ -23,17 +23,17 @@ const ReportedComments = () => {
   }
 
   return (
-    <div className="p-6 bg-white max-w-6xl mx-auto rounded shadow">
+    <div className="p-6 bg-white max-w-6xl mx-auto rounded shadow dark:bg-gray-800 dark:text-white dark:border dark:border-white">
       <h2 className="text-2xl font-bold mb-4">Reported Comments</h2>
 
       {isLoading ? (
        <Loading></Loading>
       ) : reports.length === 0 ? (
-        <p className="text-gray-500">No reports available.</p>
+        <p className="text-gray-500 dark:text-white">No reports available.</p>
       ) : (
         <div className="overflow-x-auto">
           <table className="min-w-full border text-sm">
-            <thead className="bg-gray-100 text-left">
+            <thead className="bg-gray-100 text-left dark:bg-gray-800 dark:text-white dark:border dark:border-white">
               <tr>
                 <th className="px-4 py-2 border">Commenter</th>
                 <th className="px-4 py-2 border">Comment</th>
@@ -57,13 +57,13 @@ const ReportedComments = () => {
                   </td>
                   <td className="px-4 py-2 border">
                     <select
-                      className="border px-2 py-1 rounded"
+                      className="border px-2 py-1 rounded dark:bg-gray-800 dark:text-white"
                       onChange={(e) =>
                         handleActionChange(report._id, e.target.value)
                       }
                       defaultValue=""
                     >
-                      <option value="" disabled>
+                      <option className='dark:bg-gray-800 dark:text-white' value="" disabled>
                         Select action
                       </option>
                       <option value="ignore">Ignore</option>

@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthContext";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import DarkMoodToggler from "./DarkMoodToggler";
 
 const fetchAnnouncementCount = async () => {
   const res = await axios.get("http://localhost:3000/announcements/count");
@@ -37,16 +38,16 @@ const Navbar = () => {
   });
 
   const navLinkClasses = ({ isActive }) =>
-    isActive ? "text-[#007dff] border-b-2" : "text-black";
+    isActive ? "text-[#007dff] border-b-2 dark:text-white dark:border-white" : "text-black dark:text-white";
 
   return (
-    <div className="bg-blue-100 shadow-md relative z-50">
+    <div className="bg-blue-100 shadow-md relative z-50 dark:bg-gray-800 dark:text-white dark:border-b dark:border-white">
       <div className="navbar w-11/12 mx-auto px-2 py-2">
         {/* Left: Logo + Name */}
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2 ">
             <img src="/logo.png" alt="Logo" className="w-10 h-10 mt-2" />
-            <span className="text-[#007dff] text-xl md:text-2xl lg:text-3xl font-bold">
+            <span className="text-[#007dff] text-xl md:text-2xl lg:text-3xl font-bold dark:text-white">
               DevDialogue
             </span>
           </Link>
@@ -55,7 +56,7 @@ const Navbar = () => {
         {/* Center: Home & Membership */}
         <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:block lg:flex">
           <ul className="menu menu-horizontal gap-1 lg:gap-6 text-base lg:text-lg lg:font-medium">
-            <li>
+            <li className="dark:text-white">
               <NavLink className={navLinkClasses} to="/">
                 Home
               </NavLink>
@@ -94,7 +95,7 @@ const Navbar = () => {
               Join Us
             </Link>
           ) : (
-            <div className="dropdown dropdown-end mx-2">
+            <div className="dropdown dropdown-end mx-2 ">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img src={user.photoURL} alt="User" />
@@ -102,7 +103,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60"
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60 dark:bg-gray-800 dark:text-white"
               >
                 <li className="pointer-events-none text-center font-semibold">
                   {user.displayName}
@@ -116,6 +117,7 @@ const Navbar = () => {
               </ul>
             </div>
           )}
+          <DarkMoodToggler></DarkMoodToggler>
         </div>
 
         {/* Mobile menu toggle */}
@@ -144,8 +146,8 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-base-100 px-4 pt-2 pb-4 shadow-md">
-          <ul className="menu menu-vertical text-base font-medium space-y-2">
+        <div className="md:hidden bg-base-100 px-4 pt-2 pb-4 shadow-md dark:bg-gray-800 dark:text-white">
+          <ul className="menu menu-vertical text-base font-medium space-y-2 dark:bg-gray-800 dark:text-white">
             <li>
               <NavLink to="/" className={navLinkClasses} onClick={toggleMenu}>
                 Home
@@ -190,15 +192,15 @@ const Navbar = () => {
                 </Link>
               </li>
             ) : (
-              <div className="dropdown dropdown-right mr-16">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="dropdown dropdown-right mr-16 ">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar ">
                   <div className="w-10 rounded-full">
                     <img src={user.photoURL} alt="User" />
                   </div>
                 </label>
                 <ul
                   tabIndex={0}
-                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60"
+                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60 dark:bg-gray-800 dark:text-white"
                 >
                   <li className="pointer-events-none text-center font-semibold">
                     {user.displayName}
@@ -207,11 +209,14 @@ const Navbar = () => {
                     <Link to="/dashboard">Dashboard</Link>
                   </li>
                   <li className="mx-auto text-center font-semibold">
-                    <button  onClick={handleLogout}>Logout</button>
+                    <button onClick={handleLogout}>Logout</button>
                   </li>
                 </ul>
               </div>
             )}
+            <li className="pl-3 md:pl-0 py-2 md:py-0">
+              <DarkMoodToggler></DarkMoodToggler>
+            </li>
           </ul>
         </div>
       )}

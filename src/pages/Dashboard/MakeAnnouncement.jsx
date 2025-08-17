@@ -42,8 +42,8 @@ const MakeAnnouncement = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white p-6 rounded shadow">
-      <h2 className="text-2xl font-bold text-[#009fff] mb-4">
+    <div className="max-w-3xl mx-auto bg-white p-6 rounded shadow dark:bg-gray-800 dark:text-white dark:border dark:border-white">
+      <h2 className="text-2xl font-bold text-[#009fff] mb-4 dark:text-white">
         Make Announcement
       </h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

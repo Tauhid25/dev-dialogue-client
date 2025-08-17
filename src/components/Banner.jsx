@@ -16,9 +16,10 @@ const Banner = () => {
   };
 
   return (
-    <div className="p-4 bg-white rounded-lg">
-      <div className="bg-[url('https://i.ibb.co/VX2sLwR/banner.jpg')] bg-center bg-cover min-h-100 flex flex-col justify-center items-center  text-center rounded-lg">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-10 px-2">
+    <div className="pt-4">
+      <div className="p-4 bg-white rounded-lg dark:bg-gray-800 dark:text-white dark:border dark:border-white">
+      <div className="bg-[url('https://i.ibb.co/VX2sLwR/banner.jpg')] bg-center bg-cover min-h-100 flex flex-col justify-center items-center  text-center rounded-lg dark:bg-none">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-10 px-2 dark:text-white">
           <Typewriter
             words={["Welcome to DevDialogue Community", "What's on your mind?"]}
             loop={true}
@@ -48,6 +49,7 @@ const Banner = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

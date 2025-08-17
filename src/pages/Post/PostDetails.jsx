@@ -60,7 +60,8 @@ const PostDetails = () => {
   if (loadingPost) return <Loading></Loading>;
 
   return (
-    <div className="max-w-3xl mx-2 md:mx-4 lg:mx-auto my-4 p-4 bg-white border rounded shadow">
+   <div className="pt-8 min-h-screen bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
+     <div className="max-w-3xl mx-2 md:mx-4 lg:mx-auto my-4 p-4 bg-white border rounded shadow dark:bg-gray-800 dark:text-white dark:border dark:border-white">
       {/* Post Header */}
       <div className="flex items-center gap-3 mb-4">
         <img
@@ -70,7 +71,7 @@ const PostDetails = () => {
         />
         <div>
           <h4 className="font-semibold">{post.authorName}</h4>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-white">
             {new Date(post.createdAt).toLocaleString()}
           </p>
         </div>
@@ -78,11 +79,11 @@ const PostDetails = () => {
 
       {/* Post Content */}
       <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
-      <p className="mb-3 text-gray-700">{post.description}</p>
+      <p className="mb-3 text-gray-700 dark:text-white ">{post.description}</p>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {post.tags.map((tag, i) => (
-          <span key={i} className="bg-gray-200 text-sm px-2 py-1 rounded-full">
+          <span key={i} className="bg-gray-200 text-sm px-2 py-1 rounded-full dark:bg-gray-800 dark:text-white">
             #{tag}
           </span>
         ))}
@@ -90,10 +91,10 @@ const PostDetails = () => {
 
       {/* Vote & Share */}
       <div className="flex items-center gap-4 mb-6">
-        <button onClick={() => handleVote("upVote")} className="btn btn-sm">
+        <button onClick={() => handleVote("upVote")} className="btn btn-sm dark:bg-gray-700 dark:text-white dark:border dark:border-white">
           ⬆️ {post.upVote}
         </button>
-        <button onClick={() => handleVote("downVote")} className="btn btn-sm">
+        <button onClick={() => handleVote("downVote")} className="btn btn-sm dark:bg-gray-700 dark:text-white dark:border dark:border-white">
           ⬇️ {post.downVote}
         </button>
         <FacebookShareButton url={shareUrl} quote={post.title}>
@@ -126,11 +127,11 @@ const PostDetails = () => {
         {loadingComments ? (
          <Loading></Loading>
         ) : comments.length > 0 ? (
-          <ul className="space-y-3">
+          <ul className="space-y-3 ">
             {comments.map((c, i) => (
-              <li key={i} className="bg-gray-50 p-3 rounded border">
-                <p className="text-sm text-gray-700">{c.comment}</p>
-                <p className="text-xs text-gray-400">
+              <li key={i} className="bg-gray-50 p-3 rounded border dark:bg-gray-700 dark:text-white dark:border-white">
+                <p className="text-sm text-gray-700 dark:text-white">{c.comment}</p>
+                <p className="text-xs text-gray-400 dark:text-white">
                   By {c.commenterEmail} on{" "}
                   {new Date(c.createdAt).toLocaleDateString()}
                 </p>
@@ -142,6 +143,7 @@ const PostDetails = () => {
         )}
       </div>
     </div>
+   </div>
   );
 };
 

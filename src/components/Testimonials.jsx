@@ -54,11 +54,11 @@ const Testimonials = () => {
 
   return (
     <div>
-      <div className="text-center mb-10">
-        <h1 className="text-2xl md:text-3xl font-bold py-2 md:py-4">
+      <div className="text-center mb-10 pt-8">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold py-2 md:py-4 dark:text-white">
           Voices of Our Happy Members
         </h1>
-        <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
+        <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto dark:text-white">
           Discover genuine stories and experiences from members who found value,
           connection, and inspiration with DevDialogue.
         </p>
@@ -71,7 +71,7 @@ const Testimonials = () => {
             reviews.map((review, idx) => (
               <div
                 key={`${review.name}-${i}`}
-                className="bg-white p-6 rounded-2xl min-w-[250px] flex flex-col items-center text-center shadow-md border border-gray-200"
+                className="bg-white p-6 rounded-2xl min-w-[250px] flex flex-col items-center text-center shadow-md border border-gray-200 dark:bg-gray-800 dark:text-white dark:border-white dark:border"
               >
                 <img
                   className="w-24 h-24 rounded-full mb-4 object-cover"
@@ -79,7 +79,7 @@ const Testimonials = () => {
                   alt={review.name}
                 />
                 <p className="text-lg font-semibold">{review.name}</p>
-                <p className="text-xs text-gray-600 mt-2">{review.text}</p>
+                <p className="text-xs text-gray-600 mt-2 dark:text-white">{review.text}</p>
                 <div className="flex justify-center items-center py-3">
                   {[...Array(5)].map((_, starIdx) => (
                     <FaStar key={starIdx} color="orange" />

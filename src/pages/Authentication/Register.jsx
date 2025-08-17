@@ -54,7 +54,6 @@ const Register = () => {
 
       await updateUser({ displayName: name, photoURL });
       setUser({ ...user, displayName: name, photoURL });
-      
 
       await saveUserToDB({ name, email, photoURL });
 
@@ -95,39 +94,39 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-24 px-4 py-4 bg-blue-50">
-      <div className="card bg-white w-full max-w-sm py-6 px-4 shadow-md">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-24 px-4 py-4 bg-blue-50 dark:bg-gray-800 dark:text-white">
+      <div className="card bg-white w-full max-w-sm py-6 px-4 shadow-md dark:bg-gray-800 dark:text-white dark:border dark:border-white">
         <h2 className="text-2xl font-bold text-center mb-4">
           Register your account
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
           <div>
-            <label className="label">Name</label>
+            <label className="label dark:text-white">Name</label>
             <input
               {...register("name", { required: true, minLength: 5 })}
-              className="input input-bordered w-full"
+              className="input input-bordered w-full dark:text-white dark:bg-gray-800 dark:border dark:border-white"
               placeholder="Full Name"
             />
             {errors.name && (
-              <p className="text-red-400 text-sm">Name is too short</p>
+              <p className="text-red-400 text-sm dark:text-white">Name is too short</p>
             )}
           </div>
 
           <div>
-            <label className="label">Email</label>
+            <label className="label dark:text-white">Email</label>
             <input
               {...register("email", { required: true })}
-              className="input input-bordered w-full"
+              className="input input-bordered w-full dark:text-white dark:bg-gray-800 dark:border dark:border-white"
               type="email"
               placeholder="Email"
             />
             {errors.email && (
-              <p className="text-red-400 text-sm">Email is required</p>
+              <p className="text-red-400 text-sm dark:text-white">Email is required</p>
             )}
           </div>
 
           <div>
-            <label className="label">Password</label>
+            <label className="label dark:text-white">Password</label>
             <div className="relative">
               <input
                 {...register("password", {
@@ -139,7 +138,7 @@ const Register = () => {
                   },
                 })}
                 type={showPassword ? "text" : "password"}
-                className="input input-bordered w-full"
+                className="input input-bordered w-full dark:text-white dark:bg-gray-800 dark:border dark:border-white"
                 placeholder="Password"
               />
               <button
@@ -147,24 +146,24 @@ const Register = () => {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-4 top-3 text-gray-500"
               >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
+                {showPassword ? <FaEyeSlash className="dark:text-white" /> : <FaEye className="dark:text-white"/>}
               </button>
             </div>
             {errors.password && (
-              <p className="text-red-400 text-sm">Invalid password</p>
+              <p className="text-red-400 text-sm dark:text-white">Invalid password</p>
             )}
           </div>
 
           <div className="mb-8">
-            <label className="label">Upload Profile Photo</label>
+            <label className="label dark:text-white">Upload Profile Photo</label>
             <input
               {...register("image", { required: true })}
               type="file"
               accept="image/*"
-              className="file-input file-input-bordered w-full"
+              className="file-input file-input-bordered w-full dark:text-white dark:bg-gray-800 dark:border dark:border-white"
             />
             {errors.image && (
-              <p className="text-red-400 text-sm">Image is required</p>
+              <p className="text-red-400 text-sm dark:text-white">Image is required</p>
             )}
           </div>
 
@@ -198,4 +197,3 @@ const Register = () => {
 };
 
 export default Register;
-

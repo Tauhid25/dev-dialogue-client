@@ -13,13 +13,13 @@ const FeaturedDiscussions = () => {
   }, []);
   const { data: posts = [], isLoading } = useQuery({
     queryKey: ["featuredPosts"],
-    queryFn: () => getPopularPosts(3), 
+    queryFn: () => getPopularPosts(4), 
   });
 
   return (
-    <section className="bg-white py-12 px-4 md:px-10 lg:px-20 rounded-lg shadow">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">
+    <section className="py-12  dark:bg-gray-800 dark:text-white">
+      <div className="text-center">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-8 dark:text-white">
           Featured Discussions 🔥
         </h2>
 
@@ -28,25 +28,25 @@ const FeaturedDiscussions = () => {
         ) : posts.length === 0 ? (
           <p className="text-gray-500">No featured posts found.</p>
         ) : (
-          <div data-aos="fade-up"  className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div data-aos="fade-up"  className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
             {posts.map((post) => (
               <div
                 key={post._id}
-                className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-xl transition duration-300"
+                className="bg-white border p-6 rounded-lg shadow hover:shadow-xl transition duration-300 dark:bg-gray-800 dark:text-white dark:border dark:border-white dark:rounded-lg"
               >
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                <p className="text-gray-600 text-sm line-clamp-3 mb-4 dark:text-white">
                   {post.description}
                 </p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>👤 {post.authorName}</span>
-                  <span>👍 {post.upVote - post.downVote}</span>
+                  <span className="dark:text-white">👤 {post.authorName}</span>
+                  <span className="dark:text-white">👍 {post.upVote - post.downVote}</span>
                 </div>
                 <Link
                   to={`/posts/${post._id}`}
-                  className="inline-block mt-4 text-blue-600 hover:underline"
+                  className="inline-block mt-4 text-blue-600 hover:underline dark:text-white"
                 >
                   Read More →
                 </Link>

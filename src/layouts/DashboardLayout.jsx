@@ -26,7 +26,7 @@ const DashboardLayout = () => {
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 
       {/* Main Content */}
-      <div className="flex-1 p-5 md:p-8">
+      <div className="flex-1 p-5 md:p-8 dark:bg-gray-800 dark:text-white">
         {isDashboardRoot ? <DashboardHome /> : <Outlet />}
       </div>
     </div>

@@ -14,7 +14,7 @@ import FAQ from "../../components/FAQ";
 
 const Home = () => {
   return (
-    <div className="px-4 md:px-8 lg:px-16 space-y-8 bg-blue-50">
+    <div className="px-4 md:px-8 lg:px-16 space-y-8 bg-blue-50 dark:bg-gray-800">
       <Banner></Banner>
       <SearchResults></SearchResults>
       <PostContainer></PostContainer>

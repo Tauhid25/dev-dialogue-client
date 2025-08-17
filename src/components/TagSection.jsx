@@ -12,7 +12,7 @@ const TagSection = ({ onTagClick }) => {
 
   return (
     <div className="py-10">
-      <h2 className="text-xl font-semibold mb-4">Browse by Tags</h2>
+      <h2 className="text-xl font-semibold mb-4 dark:text-white">Browse by Tags</h2>
       <div className="flex flex-wrap gap-3">
         {tags.map((tag) => (
           <button

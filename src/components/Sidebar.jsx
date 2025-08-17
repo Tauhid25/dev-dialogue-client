@@ -20,7 +20,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   return (
     <>
       {/* Desktop Sidebar */}
-      <div className="w-64 bg-white border-r shadow-md h-screen p-4 hidden md:block">
+      <div className="w-64 bg-white border-r shadow-md h-screen p-4 hidden md:block dark:bg-gray-800 dark:text-white">
         <SidebarContent
           role={role}
           isLoading={isLoading}

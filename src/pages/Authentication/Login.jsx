@@ -66,33 +66,33 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-24 px-4 pt-8 pb-26 bg-blue-50">
-      <div className="card bg-base-100 w-full max-w-sm py-6 px-4 shadow-md">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-24 px-4 pt-8 pb-26 bg-blue-50 dark:bg-gray-800 dark:text-white">
+      <div className="card bg-base-100 w-full max-w-sm py-6 px-4 shadow-md dark:bg-gray-800 dark:text-white dark:border dark:border-white">
         <h2 className="text-2xl font-bold text-center mb-4">
           Login to your account
         </h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
           <div>
-            <label className="label">Email</label>
+            <label className="label dark:text-white">Email</label>
             <input
               {...register("email", { required: true })}
               type="email"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full dark:text-white dark:bg-gray-800 dark:border dark:border-white"
               placeholder="Email"
             />
             {errors.email && (
-              <p className="text-error text-sm">Email is required</p>
+              <p className="text-error text-sm dark:text-white">Email is required</p>
             )}
           </div>
 
           <div>
-            <label className="label">Password</label>
+            <label className="label dark:text-white">Password</label>
             <div className="relative">
               <input
                 {...register("password", { required: true })}
                 type={showPassword ? "text" : "password"}
-                className="input input-bordered w-full"
+                className="input input-bordered w-full dark:text-white dark:bg-gray-800 dark:border dark:border-white"
                 placeholder="Password"
               />
               <button
@@ -100,15 +100,15 @@ const Login = () => {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-4 top-3 text-gray-500"
               >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
+                {showPassword ? <FaEyeSlash  className="dark:text-white"/> : <FaEye className="dark:text-white"/>}
               </button>
             </div>
             {errors.password && (
-              <p className="text-error text-sm">Password is required</p>
+              <p className="text-error text-sm dark:text-white">Password is required</p>
             )}
           </div>
 
-          {error && <p className="text-error text-sm">{error}</p>}
+          {error && <p className="text-error text-sm dark:text-white">{error}</p>}
 
           <button
             className="btn btn-outline mt-4 w-full  bg-[#009fff] text-white px-4 py-1 rounded-lg text-base hover:bg-[#007dff] cursor-pointer"

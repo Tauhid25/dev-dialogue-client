@@ -7,7 +7,7 @@ import Loading from "../pages/Loading/Loading";
 const PostContainer = () => {
   const [sortByPopularity, setSortByPopularity] = useState(false);
   const [page, setPage] = useState(1);
-  const limit = 5;
+  const limit = 6;
 
   const { data: posts = [], isLoading } = useQuery({
     queryKey: ["posts", sortByPopularity, page],
@@ -26,7 +26,7 @@ const PostContainer = () => {
       </button>
 
       <div>
-        <h2 className="text-2xl font-bold mb-4">All Posts</h2>
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 dark:text-white text-center">All Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {posts.map((post) => (
             <PostCard key={post._id} post={post} />

@@ -7,13 +7,13 @@ const SidebarContent = ({ role, isLoading, linkClass }) => {
     <>
       <Link to="/" className="flex items-center gap-2 mb-6 px-2">
         <img src="/logo.png" alt="Logo" className="w-8 h-8" />
-        <span className="text-[#007dff] text-lg font-bold">DevDialogue</span>
+        <span className="text-[#007dff] text-lg font-bold dark:text-white">DevDialogue</span>
       </Link>
 
       {isLoading ? (
         <Loading></Loading>
       ) : (
-        <nav className="space-y-2 text-gray-800 text-sm">
+        <nav className="space-y-2 text-gray-800 text-sm dark:text-white">
           {role === "admin" ? (
             <>
               <NavLink to="/dashboard/admin-profile" className={linkClass}>

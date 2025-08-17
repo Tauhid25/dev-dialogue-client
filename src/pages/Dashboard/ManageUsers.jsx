@@ -41,14 +41,14 @@ const ManageUsers = () => {
   };
 
   return (
-    <div className="p-6 bg-white rounded shadow max-w-6xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4 text-[#009fff]">Manage Users</h2>
+    <div className="p-6 bg-white rounded shadow max-w-6xl mx-auto dark:bg-gray-800 dark:text-white dark:border dark:border-white">
+      <h2 className="text-2xl font-bold mb-4 text-[#009fff] dark:text-white">Manage Users</h2>
 
       <form onSubmit={handleSearch} className="mb-4 flex gap-3">
         <input
           type="text"
           placeholder="Search by name"
-          className="border px-4 py-2 rounded w-full md:w-1/2"
+          className="border px-4 py-2 rounded w-full md:w-1/2 "
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -66,7 +66,7 @@ const ManageUsers = () => {
         <>
           <div className="overflow-x-auto">
             <table className="min-w-full border">
-              <thead className="bg-gray-100 text-left">
+              <thead className="bg-gray-100 text-left dark:bg-gray-800 dark:text-white">
                 <tr>
                   <th className="px-4 py-2 border">Name</th>
                   <th className="px-4 py-2 border">Email</th>

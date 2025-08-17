@@ -106,7 +106,7 @@ const PostCard = ({ post }) => {
     <Link to={`/posts/${post._id}`}>
       <div
         data-aos="fade-up"
-        className="bg-white border p-4 rounded-lg shadow hover:shadow-md transition"
+        className="bg-white p-4 rounded-lg shadow hover:shadow-md transition dark:bg-gray-800 dark:text-white dark:border dark:border-white"
       >
         {/* Author Info */}
         <div className="flex items-center gap-2 mb-2">
@@ -122,14 +122,14 @@ const PostCard = ({ post }) => {
         <h2 className="text-xl font-bold mb-1">{post.title}</h2>
 
         {/* Short Description */}
-        <p className="text-sm text-gray-600 mb-2">{shortDescription}</p>
+        <p className="text-sm text-gray-600 mb-2 dark:text-white">{shortDescription}</p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-2">
           {post.tags?.map((tag, index) => (
             <span
               key={index}
-              className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded"
+              className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-gray-800 dark:text-white"
             >
               #{tag}
             </span>
@@ -137,22 +137,22 @@ const PostCard = ({ post }) => {
         </div>
 
         {/* Date */}
-        <p className="text-xs text-gray-400 mb-2">
+        <p className="text-xs text-gray-400 mb-2 dark:text-white">
           {new Date(post.createdAt).toLocaleString()}
         </p>
 
         {/* Vote & Comment Stats */}
         <div className="flex items-center gap-4 mt-3 text-sm text-gray-700">
-          <span className="flex items-center gap-1">
+          <span className="flex items-center gap-1 dark:text-white">
             <FaThumbsUp /> {post.upVote}
           </span>
-          <span className="flex items-center gap-1">
+          <span className="flex items-center gap-1 dark:text-white">
             <FaThumbsDown /> {post.downVote}
           </span>
-          <span className="flex items-center gap-1">
+          <span className="flex items-center gap-1 dark:text-white">
             <FaRegComments /> {commentCount}
           </span>
-          <span className="font-bold">Total Vote: {voteCount}</span>
+          <span className="font-bold dark:text-white">Total Vote: {voteCount}</span>
         </div>
       </div>
     </Link>

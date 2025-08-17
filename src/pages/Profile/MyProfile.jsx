@@ -49,7 +49,7 @@ const MyProfile = () => {
     );
 
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow rounded p-6 mt-8">
+    <div className="max-w-4xl mx-auto bg-white shadow rounded p-6 mt-8 dark:bg-gray-800 dark:text-white dark:border dark:border-white">
       <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
         <img
           src={
@@ -64,7 +64,7 @@ const MyProfile = () => {
           <h1 className="text-3xl font-bold">
             {userInfo?.name || user?.displayName}
           </h1>
-          <p className="text-gray-600">{user?.email}</p>
+          <p className="text-gray-600 dark:text-white">{user?.email}</p>
           <div className="mt-2">{badge}</div>
         </div>
       </div>
@@ -74,13 +74,13 @@ const MyProfile = () => {
         {isPostsLoading ? (
           <Loading></Loading>
         ) : posts.length === 0 ? (
-          <p className="text-gray-500">You have not posted anything yet.</p>
+          <p className="text-gray-500 dark:text-white">You have not posted anything yet.</p>
         ) : (
           <ul className="space-y-3">
             {posts.slice(0, 3).map((post) => (
               <li key={post._id} className="border-b pb-2">
-                <h3 className="text-lg font-semibold">{post.title}</h3>
-                <p className="text-gray-500 text-sm">
+                <h3 className="text-lg font-semibold ">{post.title}</h3>
+                <p className="text-gray-500 text-sm dark:text-white">
                   {new Date(post.createdAt).toLocaleDateString()}
                 </p>
               </li>

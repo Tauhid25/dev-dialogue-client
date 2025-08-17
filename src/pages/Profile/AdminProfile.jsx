@@ -78,7 +78,7 @@ const AdminProfile = () => {
       </div>
 
       {/* Chart */}
-      <div className="bg-white rounded shadow p-6 mb-10">
+      <div className="bg-white rounded shadow p-6 mb-10 dark:bg-gray-800 dark:text-white dark:border dark:border-white">
         <h2 className="text-xl font-semibold mb-4">Site Overview</h2>
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
@@ -101,14 +101,14 @@ const AdminProfile = () => {
       </div>
 
       {/* Add Tag Form */}
-      <div className="bg-white p-6 rounded shadow">
+      <div className="bg-white p-6 rounded shadow dark:bg-gray-800 dark:text-white dark:border dark:border-white">
         <h2 className="text-xl font-semibold mb-4">Add New Tag</h2>
         <form onSubmit={handleSubmit} className="flex gap-4 items-center">
           <input
             type="text"
             value={tagInput}
             onChange={(e) => setTagInput(e.target.value)}
-            className="input input-bordered w-full max-w-xs"
+            className="input input-bordered w-full max-w-xs dark:bg-gray-800 dark:text-white dark:border dark:border-white"
             placeholder="Enter tag name (e.g. javascript)"
           />
           <button

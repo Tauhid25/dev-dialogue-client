@@ -66,7 +66,7 @@ const MyPosts = () => {
   const totalPages = Math.ceil(data.total / POSTS_PER_PAGE);
 
   return (
-    <div className="max-w-5xl mx-auto bg-white p-6 rounded shadow">
+    <div className="max-w-5xl mx-auto bg-white p-6 rounded shadow dark:bg-gray-800 dark:text-white dark:border dark:border-white">
       <h2 className="text-2xl font-bold mb-6">My Posts</h2>
 
       {isLoading && <p>Loading...</p>}
@@ -79,9 +79,9 @@ const MyPosts = () => {
       {!isLoading && data?.posts?.length > 0 && (
         <>
           <div className="overflow-x-auto">
-            <table className="min-w-full text-left border">
+            <table className="min-w-full text-left border dark:border-white">
               <thead>
-                <tr className="bg-gray-100 text-gray-700">
+                <tr className="bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-white">
                   <th className="px-4 py-2 border">Title</th>
                   <th className="px-4 py-2 border">Votes</th>
                   <th className="px-4 py-2 border">Comments</th>
@@ -91,7 +91,7 @@ const MyPosts = () => {
               <tbody>
                 {data.posts.map((post) => (
                   <tr key={post._id} className="border-b">
-                    <td className="px-4 py-2 border font-medium text-gray-900">
+                    <td className="px-4 py-2 border font-medium text-gray-900 dark:bg-gray-800 dark:text-white">
                       {post.title}
                     </td>
                     <td className="px-4 py-2 border">
