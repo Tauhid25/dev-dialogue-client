@@ -9,12 +9,12 @@ const Loading = () => {
             </div>
 
             {/* Main message */}
-            <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            <h2 className="text-2xl font-semibold text-gray-700 ">
                 Hang tight! We're loading your data...
             </h2>
 
             {/* Sub message */}
-            <p className="text-sm text-gray-500 dark:text-gray-400 max-w-md mt-2">
+            <p className="text-sm text-gray-500  max-w-md mt-2">
                 Our system is carefully processing your  information.
             </p>
 

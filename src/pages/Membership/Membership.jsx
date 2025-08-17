@@ -13,7 +13,7 @@ const Membership = () => {
       const stripe = await stripePromise;
 
       const res = await axios.post(
-        "https://dev-dialogue-server.vercel.app/create-checkout-session",
+        "http://localhost:3000/create-checkout-session",
         {
           email: user.email,
         }
@@ -27,7 +27,7 @@ const Membership = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-2 md:mx-auto bg-white p-6 rounded shadow mt-10 text-center border border-b-gray-500">
+    <div className="max-w-3xl mx-2 md:mx-auto bg-white p-6 rounded shadow mt-10 text-center border border-b-gray-500">
       <h2 className="text-3xl font-bold text-[#009fff] mb-4">
         Upgrade to Gold Membership
       </h2>

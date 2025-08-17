@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const fetchAnnouncementCount = async () => {
-  const res = await axios.get("https://dev-dialogue-server.vercel.app/announcements/count");
+  const res = await axios.get("http://localhost:3000/announcements/count");
   return res.data.count;
 };
 
@@ -40,7 +40,7 @@ const Navbar = () => {
     isActive ? "text-[#007dff] border-b-2" : "text-black";
 
   return (
-    <div className="bg-gray-100 shadow-md relative z-50">
+    <div className="bg-blue-100 shadow-md relative z-50">
       <div className="navbar w-11/12 mx-auto px-2 py-2">
         {/* Left: Logo + Name */}
         <div className="flex items-center gap-2">

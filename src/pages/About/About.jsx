@@ -8,7 +8,7 @@ const About = () => {
     AOS.init({ duration: 2000 });
   }, []);
   return (
-    <div className="bg-gray-50 py-12 px-6 md:px-10 lg:px-24 min-h-screen">
+    <div className="bg-pink-50 py-12 px-6 md:px-10 lg:px-24 min-h-screen">
       <div className="max-w-5xl mx-auto text-center mb-12">
         <h1 className="text-4xl font-bold text-blue-700 mb-4">
           About DevDialogue

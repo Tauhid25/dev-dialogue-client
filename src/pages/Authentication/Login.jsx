@@ -66,7 +66,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-24 px-4 pt-8 pb-26 bg-gray-100">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-24 px-4 pt-8 pb-26 bg-blue-50">
       <div className="card bg-base-100 w-full max-w-sm py-6 px-4 shadow-md">
         <h2 className="text-2xl font-bold text-center mb-4">
           Login to your account

@@ -95,7 +95,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-24 px-4 py-4 bg-gray-50">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-24 px-4 py-4 bg-blue-50">
       <div className="card bg-white w-full max-w-sm py-6 px-4 shadow-md">
         <h2 className="text-2xl font-bold text-center mb-4">
           Register your account

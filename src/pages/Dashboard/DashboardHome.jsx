@@ -13,6 +13,8 @@ const DashboardHome = () => {
           <h2 className="flex items-center text-xl font-semibold text-blue-800"><img src={user?.photoURL} alt="User" className="w-10 h-10 mt-2 rounded-full" /> Logged in as:</h2>
           <p className="text-gray-800 mt-2">{user?.displayName || "User"}</p>
           <p className="text-gray-500 text-sm">{user?.email}</p>
+          <p className="text-gray-500 text-sm">{user?.phone}</p>
+          <p className="text-gray-500 text-sm">{user?.address}</p>
         </div>
 
         <div className="bg-green-100 rounded-lg p-4 shadow-sm">
